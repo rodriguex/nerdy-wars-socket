@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nerdywars_user
+      POSTGRES_PASSWORD: nerdywars_super_secure_fucking_password
+      POSTGRES_DB: nerdywars
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
